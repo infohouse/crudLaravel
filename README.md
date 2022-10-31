@@ -1,4 +1,4 @@
-#<p style="text-align: center;">Tarefas em laravel 8 </p>
+#Tarefas em laravel 8
 
 
 
