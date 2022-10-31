@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tarefa extends Model
+class Login extends Model
 {
-    use HasFactory;
-    protected $fillable = ['descricao', 'status', 'userid'];
+   protected $fillable = ['login', 'senha']; 	 
+   use HasFactory;
 }

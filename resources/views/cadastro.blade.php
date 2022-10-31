@@ -25,9 +25,8 @@
     Pendente
   </label>
 </div>
+  <input type="hidden" name="userid" value="{{ $id }}">  
   <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
 </form>
-
-
 
 @endsection

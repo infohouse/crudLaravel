@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
 
-
+@if(!isset($restrito))
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fw-bold fs-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('tarefa.index') }}">Tarefas</a>
@@ -31,13 +31,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        @if(isset($_SESSION['acesso']))
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="btn btn-light btn-outline-info text-primary" aria-current="page" href="{{ route('sessao.destroy') }}">Logout</a>
         </li>
+	@endif
+
     </div>
   </div>
 </nav>
-
+@endif
 
 <div class="container mt-5">
 

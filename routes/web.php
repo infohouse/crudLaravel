@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TarefaController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,15 @@ use App\Http\Controllers\TarefaController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return redirect()->route('tarefa.index');;
 })->name('web.index');
-
+*/
 Route::resource('/tarefa', TarefaController::class);
 
-Auth::routes();
+Route::resource('/', LoginController::class);
+
+Route::get('/sessao', [LoginController::class, 'logoff'])->name('sessao.destroy');
+
+//Auth::routes();
 

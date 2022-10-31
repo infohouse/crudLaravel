@@ -12,10 +12,17 @@ class TarefaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+	$this->middleware('login');
+    }	
+
     public function index()
     {
-	$tarefas = Tarefa::all();
+	
+	$tarefas = Tarefa::where('userid', $_SESSION['id'])->get();
 	return view('welcome', ['tarefas' => $tarefas]);
+
     }
 
     /**
@@ -25,7 +32,8 @@ class TarefaController extends Controller
      */
     public function create()
     {
-        return view('cadastro');
+        $id = $_SESSION['id'];
+        return view('cadastro', ['id' => $id]);
     }
 
     /**
