@@ -6,4 +6,4 @@ jobs:
     name: Laravel Crud
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v1
+      - uses: ./github/actions/composer
