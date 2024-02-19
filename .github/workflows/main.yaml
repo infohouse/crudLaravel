@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/composer
+      - uses: infohouse/crudLaravel/tree/master/.github/actions/composer
