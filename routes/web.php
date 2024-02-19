@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TarefaController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\escalaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,7 @@ use App\Http\Controllers\LoginController;
 })->name('web.index');
 */
 Route::resource('/tarefa', TarefaController::class);
+Route::resource('/escala', escalaController::class);
 
 Route::resource('/', LoginController::class);
 
