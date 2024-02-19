@@ -1,0 +1,9 @@
+name: simple crud
+on: push
+
+jobs:
+  build:
+    name: Laravel Crud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v1
