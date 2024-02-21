@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: userA
+      MYSQL_PASSWORD: firewall
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    networks:
+      - neo
+  app:
+    build: .
+    ports:
+      - 80:8000
+    networks:
+      - neo
+    ENTRYPOINT ["php", "artisan", "serve"]
+
+networks:
+  neo:
