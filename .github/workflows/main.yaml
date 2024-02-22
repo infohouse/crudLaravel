@@ -1,10 +1,9 @@
-name: simple crud
-on: push
-
+name: Laravel
+on: push    
 jobs:
-  build:
-    name: Laravel Crud
+  laravel-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: infohouse/crudLaravel/tree/master/.github/actions/composer
+      - uses: actions/checkout@v3      
+      - run: docker-compose up -d
+      - run: curl localhost
